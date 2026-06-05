@@ -1,0 +1,48 @@
+# ชื่อของ Workflow ที่จะแสดงในแถบ Actions ของ GitHub
+name: Deploy Microtronic Terms to GitHub Pages
+
+# กำหนด Event ในการทำงาน (สั่งให้ทำงานเมื่อมีการ Push โค้ดเข้าไปยัง branch 'main')
+on:
+  push:
+    branches:
+      - main
+  # เปิดให้สามารถกดสั่งรันด้วยตัวเองผ่านหน้าเว็บ GitHub ได้ (Manual Run)
+  workflow_dispatch:
+
+# อนุญาตสิทธิ์ (Permissions) ที่จำเป็นสำหรับ GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# จัดกลุ่มการทำงานเพื่อไม่ให้รันซ้อนกัน (หากมีการ Push ถี่ๆ จะยกเลิกตัวเก่าแล้วรันตัวใหม่สุดทันที)
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # งานสำหรับการ Deploy หน้า Static HTML หน้าเดียว
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      # อัปโหลดเฉพาะไฟล์ HTML ที่เตรียมไว้ (รวมถึงโฟลเดอร์สาธารณะหากมี)
+      # โดยใช้สเต็ปอัปโหลด Static Files มาตรฐานของ GitHub Actions
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # ระบุตำแหน่งโฟลเดอร์ที่จัดเก็บไฟล์ 'terms_and_conditions.html'
+          # หากไฟล์อยู่ชั้นนอกสุดของโปรเจกต์ (Root) ให้ใช้ "." หรือใส่ชื่อโฟลเดอร์หากคุณแยกไว้
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
