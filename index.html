@@ -1,32 +1,408 @@
-ข้อตกลงและเงื่อนไขการใช้บริการพัฒนาและจัดแต่งระบบ
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อตกลงและเงื่อนไขการใช้บริการ - MICROTRONIC (THAILAND) CO., LTD.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Sarabun & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Sarabun', 'Inter', sans-serif;
+        }
+        /* Custom Scrollbar for modern feel */
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Print utilities styling */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-shadow-none {
+                box-shadow: none !important;
+                border: none !important;
+            }
+            .print-padding-none {
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- ส่วนหัวเว็บไซต์ (Header) - ซ่อนเมื่อสั่งพิมพ์ -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-indigo-600 text-white p-2.5 rounded-xl shadow-md shadow-indigo-100">
+                    <i class="fa-solid fa-scale-balanced text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm sm:text-base font-bold text-slate-900 leading-tight">MICROTRONIC Legal Desk</h1>
+                    <p class="text-xs text-slate-500">เอกสารข้อตกลงและขอบเขตทางกฎหมายของบริษัท</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <!-- ปุ่มพิมพ์เอกสาร -->
+                <button onclick="window.print()" class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-2 rounded-lg text-sm font-semibold transition-colors">
+                    <i class="fa-solid fa-print"></i>
+                    <span class="hidden sm:inline">พิมพ์ / บันทึก PDF</span>
+                </button>
+                <!-- ปุ่มคัดลอกข้อความทั้งหมด -->
+                <button onclick="copyFullText()" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-3 sm:px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-sm shadow-indigo-200">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>คัดลอกข้อความ</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ส่วนเนื้อหาหลัก (Main Content) -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row gap-8">
+        
+        <!-- แผงข้อมูลและสารบัญด้านซ้าย (Left Sidebar) - ซ่อนเมื่อสั่งพิมพ์ -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-6 no-print">
+            
+            <!-- การแจ้งสถานะนโยบาย (Status Card) -->
+            <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-6 rounded-2xl shadow-lg border border-slate-800">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border border-emerald-500/30">
+                        Active & Verified
+                    </span>
+                    <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                </div>
+                <h3 class="font-bold text-base leading-snug mb-1">บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด</h3>
+                <p class="text-xs text-slate-400 font-mono mb-4">MICROTRONIC (THAILAND) CO., LTD.</p>
+                
+                <div class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800/80 pt-4">
+                    <div class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-envelope text-indigo-400 mt-0.5 w-4 text-center"></i>
+                        <span>อีเมลติดต่อ:<br><span class="font-mono text-white text-sm">grids@microtronic.biz</span></span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-location-dot text-indigo-400 mt-0.5 w-4 text-center"></i>
+                        <span class="leading-relaxed">136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- สารบัญหัวข้อด่วน (Quick Navigation) -->
+            <nav class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm sticky top-24">
+                <h3 class="font-bold text-slate-900 border-b border-slate-100 pb-3 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-list-ol text-indigo-600"></i>
+                    <span>สารบัญนโยบาย</span>
+                </h3>
+                <ul class="space-y-1 text-sm text-slate-600" id="toc-list">
+                    <!-- โหลดอัตโนมัติผ่าน JS -->
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- เอกสารแสดงผลจริงด้านขวา (Right Side - Document Preview) -->
+        <section class="flex-1 space-y-6 print-padding-none">
+            
+            <!-- แถบเตือนด้านบน (Notice Banner) - ซ่อนเมื่อสั่งพิมพ์ -->
+            <div class="bg-indigo-50 border border-indigo-100 p-5 rounded-2xl flex items-start gap-4 no-print">
+                <div class="bg-indigo-600 text-white p-2.5 rounded-xl shrink-0 shadow-sm">
+                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-indigo-950 mb-1">ขอบเขตการคุ้มครองตามแบบแผนสากล</h4>
+                    <p class="text-sm text-indigo-800 leading-relaxed">
+                        เอกสารนี้เขียนขึ้นมาเพื่อประกาศให้สาธารณชนรับทราบว่างานจ้างของเราคือ <strong>"งานบริการปรับแต่ง ติดตั้ง และค่าแรงทางเทคนิค"</strong> เป็นการยกเว้นข้อพิพาทสิทธิขาดเหนือ Next.js และ Vite ที่เป็นโอเพนซอร์สสากล
+                    </p>
+                </div>
+            </div>
+
+            <!-- หน้ากระดาษตัวเอกสาร (Document Container) -->
+            <div class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-12 relative overflow-hidden print-shadow-none print-padding-none">
+                <!-- ลายน้ำภูมิหลังสัญญากฎหมาย -->
+                <div class="absolute top-0 right-0 w-48 h-48 bg-indigo-50 rounded-full filter blur-3xl opacity-30 -mr-16 -mt-16 no-print"></div>
+                
+                <!-- หัวกระดาษเอกสาร (Document Header) -->
+                <div class="border-b border-slate-100 pb-8 mb-8 text-center sm:text-left">
+                    <span class="inline-block bg-indigo-100 text-indigo-800 text-[11px] font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-3 no-print">
+                        Official Legal Document
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-2 leading-tight">
+                        ข้อตกลงและเงื่อนไขการใช้บริการพัฒนาและจัดแต่งระบบคอมพิวเตอร์
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500 flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 font-medium">
+                        <span>มีผลบังคับใช้ ณ วันที่ 5 มิถุนายน 2026</span>
+                        <span>•</span>
+                        <span>เว็บไซต์ทางการ: <span class="text-slate-800">www.microtronic.co.th</span></span>
+                    </p>
+                </div>
+
+                <!-- เนื้อหาสัญญา (Document Body Content) -->
+                <div class="space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">
+                    
+                    <!-- ส่วนที่ 1 -->
+                    <div id="sec-1" class="section-block scroll-mt-24">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3.5 pb-2 border-b border-slate-50">
+                            <span class="bg-indigo-50 text-indigo-600 px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold">01</span>
+                            <span>บททั่วไปและสัญญานิติบุคคล</span>
+                        </h3>
+                        <p class="mb-3">
+                            ข้อตกลงและเงื่อนไขการใช้บริการฉบับนี้ จัดทำขึ้นและบังคับใช้โดย <strong>บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด [MICROTRONIC (THAILAND) CO., LTD.]</strong> จดทะเบียนภายใต้กฎหมายแห่งราชอาณาจักรไทย มีสำนักงานตั้งอยู่เลขที่ <strong>136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400</strong> (ซึ่งต่อไปในสัญญานี้จะเรียกว่า <strong>"ผู้ให้บริการ"</strong>) ฝ่ายหนึ่ง
+                        </p>
+                        <p>
+                            กับ บุคคลธรรมดา คณะบุคคล นิติบุคคล หรือองค์กรภาครัฐและเอกชน ที่ประสงค์จะรับสิทธิ์เข้าถึง ดาวน์โหลด ใช้งานซอร์สโค้ดต้นแบบ หรือจัดจ้างพัฒนาตกแต่งระบบเว็บไซต์ที่พึ่งพาเทคโนโลยีโครงสร้างของผู้ให้บริการ (ซึ่งต่อไปในสัญญานี้จะเรียกว่า <strong>"ผู้ใช้บริการ"</strong>) อีกฝ่ายหนึ่ง
+                        </p>
+                    </div>
+
+                    <!-- ส่วนที่ 2 -->
+                    <div id="sec-2" class="section-block scroll-mt-24">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3.5 pb-2 border-b border-slate-50">
+                            <span class="bg-indigo-50 text-indigo-600 px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold">02</span>
+                            <span>โมเดลการประกอบธุรกิจและขอบเขตบริการรับจ้าง</span>
+                        </h3>
+                        <p class="mb-4">
+                            ผู้ใช้บริการตกลงและยอมรับในใจความสำคัญว่า <strong>ผู้ให้บริการประกอบธุรกิจในรูปแบบ "การให้บริการ ตกแต่ง ปรับปรุง ติดตั้ง และขายทักษะช่างคอมพิวเตอร์" (Service and Professional Labor Model)</strong> มิใช่โมเดลการขายสิทธิ์ความเป็นเจ้าของในตัวรหัสโค้ดแกนกลางแต่เพียงผู้เดียว โดยค่าบริการใด ๆ ที่เรียกเก็บจะแบ่งประเภทเป็น:
+                        </p>
+                        <div class="grid grid-cols-1 gap-3 mb-4">
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 text-sm mb-1">1. ค่าวิชาชีพจัดทำและปรับแต่งเฉพาะบุคคล (Customization Fee)</h4>
+                                <p class="text-xs sm:text-sm text-slate-600">ค่าแรงงานในการวิเคราะห์ ออกแบบ ปรับเปลี่ยนส่วนติดต่อผู้ใช้ (UI/UX) ปรับแต่งชุดสี โลโก้ และเนื้อหาของเทมเพลตให้สอดคล้องตามความเหมาะสมของแบรนด์ผู้ใช้บริการ</p>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 text-sm mb-1">2. ค่าดำเนินการประกอบและเชื่อมโยงระบบ (Deployment & Implementation)</h4>
+                                <p class="text-xs sm:text-sm text-slate-600">ค่าใช้จ่ายเกี่ยวกับเวลาและอุปกรณ์ในขั้นตอนนำซอฟต์แวร์อัปโหลดขึ้นเครื่องแม่ข่าย (Cloud/Hosting Server) กำหนดค่าระบบโดเมนเนม (DNS) และเชื่อมประสาน API บุคคลที่สาม</p>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 text-sm mb-1">3. ค่าบริการบำรุงรักษาระบบคอมพิวเตอร์ (Technical Support & Maintenance)</h4>
+                                <p class="text-xs sm:text-sm text-slate-600">ค่าใช้จ่ายดูแลตรวจเช็กแก้ไขปัญหาของระบบที่ตกลงกันตามช่วงสัญญาเฉพาะหลังสิ้นสุดงานจ้างประกอบระบบ</p>
+                            </div>
+                        </div>
+                        <p class="bg-indigo-50/50 border-l-4 border-indigo-600 p-4 rounded-r-xl text-slate-700 italic text-xs sm:text-sm">
+                            "ผู้ใช้บริการเข้าใจโดยชัดแจ้งว่า จำนวนเงินที่ผู้ใช้บริการชำระให้แก่ บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด ถือเป็นสินจ้างสำหรับ 'เวลา ทักษะความรู้ความสามารถ และบริการทางเทคนิค' ของทีมงานผู้ให้บริการเท่านั้น"
+                        </p>
+                    </div>
+
+                    <!-- ส่วนที่ 3 -->
+                    <div id="sec-3" class="section-block scroll-mt-24">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3.5 pb-2 border-b border-slate-50">
+                            <span class="bg-indigo-50 text-indigo-600 px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold">03</span>
+                            <span>การคุ้มครองตามสัญญาอนุญาตเปิดเผยซอร์สโค้ด (Open Source Compliance)</span>
+                        </h3>
+                        <p class="mb-3">
+                            เนื่องจากรหัสต้นแบบและเฟรมเวิร์กส่วนแกนกลางที่ใช้ในการจัดเตรียมการบริการให้แก่ผู้ใช้บริการ ประกอบด้วยระบบซอฟต์แวร์สากลอย่าง <strong>Next.js</strong> และ <strong>Vite</strong> ซึ่งเผยแพร่แก่สาธารณชนภายใต้สัญญาอนุญาตสากลแบบเปิดเผยโค้ด (Open Source License เช่น MIT License หรือเทียบเท่า) คู่สัญญาทั้งสองฝ่ายจึงตกลงเงื่อนไขด้านลิขสิทธิ์ร่วมกันดังนี้:
+                        </p>
+                        <ol class="list-decimal pl-6 space-y-2 mb-3 text-slate-600">
+                            <li>ผู้ใช้บริการยอมรับว่าผู้ให้บริการไม่มีฐานะเป็นเจ้าของลิขสิทธิ์จำเพาะแต่เพียงผู้เดียวในตัวเฟรมเวิร์ก Next.js, Vite หรือ Package ต่าง ๆ ที่นำเข้ามาใช้งาน และตัวผู้ใช้บริการเองก็ตกลงจะไม่แอบอ้างสิทธิ์เหล่านั้นเช่นกัน</li>
+                            <li>ผู้ใช้บริการจะได้รับสิทธิ์อันชอบธรรมตามกฎหมาย ในการครอบครอง นำไปใช้ประโยชน์ ปรับปรุง ตกแต่งต่อยอด หรือแจกจ่ายต่อในส่วนของงานที่ได้ผ่านการ 'ปรับแต่งตามความต้องการลูกค้า' (Custom Proprietary Code) งานสร้างสรรค์รูปภาพ อัตลักษณ์แบรนด์ และตรรกะเฉพาะทางธุรกิจอย่างเต็มที่</li>
+                            <li>หากเป็นการดาวน์โหลดหรือคัดลอกไฟล์ต้นแบบที่เปิดให้ใช้งานฟรีบนเว็บไซต์ ผู้ใช้บริการตกลงยินยอมที่จะรักษาข้อความการยินยอมการใช้สิทธิ์ดั้งเดิม (Copyright Notice) ที่ปรากฏอยู่ในชุดคำสั่งไฟล์งานเหล่านั้นไว้เสมอ</li>
+                        </ol>
+                    </div>
+
+                    <!-- ส่วนที่ 4 -->
+                    <div id="sec-4" class="section-block scroll-mt-24">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3.5 pb-2 border-b border-slate-50">
+                            <span class="bg-indigo-50 text-indigo-600 px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold">04</span>
+                            <span>การจำกัดความรับผิดชอบและการปฏิเสธการรับประกัน</span>
+                        </h3>
+                        <p class="mb-3">
+                            ผู้ให้บริการจัดเตรียมเทมเพลตซอร์สโค้ดฐานเปล่าในลักษณะ "ตามสภาพที่เป็นอยู่ขณะนั้น" (As-Is Basis):
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 mb-3 text-slate-600">
+                            <li>ผู้ให้บริการขอปฏิเสธการรับประกันความเสียหาย สูญหายของข้อมูล รายรับขององค์กร หรือความปลอดภัยของระบบโครงสร้างภายนอก เช่น การอัปเดตระบบของโฮสติ้ง, การเปลี่ยนแปลงนโยบายสิทธิ์ของ Next.js/Vite, ความไม่เข้ากันของแพลตฟอร์ม และข้อบกพร่องที่เกิดจากปลั๊กอิน (Plugins/Dependencies) ของบุคคลภายนอก</li>
+                            <li>ผู้ใช้บริการรับทราบและตกลงว่า การทดสอบระบบความปลอดภัยและระบบข้อมูลก่อนการเปิดใช้งานเชิงพาณิชย์เป็นความรับผิดชอบอันจำเพาะและเป็นหน้าที่ของผู้ใช้บริการเอง</li>
+                            <li>ในกรณีที่มีการฟ้องร้องใดๆ เกี่ยวกับขอบข่ายการรับจ้างปรับแต่งระบบ ความรับผิดโดยรวมสูงสุดของผู้ให้บริการจะถูกจำกัดวงเงินไว้ไม่เกินจำนวนเงินแท้จริงที่ผู้ใช้บริการได้ชำระให้แก่ผู้ให้บริการสำหรับการว่าจ้างในคราวนั้น ๆ เท่านั้น</li>
+                        </ul>
+                    </div>
+
+                    <!-- ส่วนที่ 5 -->
+                    <div id="sec-5" class="section-block scroll-mt-24">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3.5 pb-2 border-b border-slate-50">
+                            <span class="bg-indigo-50 text-indigo-600 px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold">05</span>
+                            <span>ทรัพย์สินทางปัญญาสำหรับเนื้อหาและสื่อโฆษณา (Media Rights)</span>
+                        </h3>
+                        <p>
+                            เครื่องหมายทางการค้า โลโก้สัญลักษณ์ โทนสี อัตลักษณ์แบรนด์ ภาพกราฟิกตัวอย่าง และข้อความโฆษณาบนเว็บไซต์ทั้งหมดที่สร้างขึ้นโดย บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด ถือเป็นกรรมสิทธิ์ของทางผู้ให้บริการแต่เพียงผู้เดียวอย่างเด็ดขาด ห้ามมิให้ผู้ใช้บริการนำอัตลักษณ์เหล่านี้ไปสวมรอย ดัดแปลง ลอกเลียน คัดลอกไปทำซ้ำ เพื่อนำไปจำหน่ายเชิงพาณิชย์ต่อโดยไม่ได้รับการอนุญาตเป็นเอกสารลงลายมือชื่อจากกรรมการผู้มีอำนาจของบริษัทฯ
+                        </p>
+                    </div>
+
+                    <!-- ส่วนที่ 6 -->
+                    <div id="sec-6" class="section-block scroll-mt-24">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3.5 pb-2 border-b border-slate-50">
+                            <span class="bg-indigo-50 text-indigo-600 px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold">06</span>
+                            <span>กฎหมายบังคับใช้และช่องทางการติดต่อนิติบุคคล</span>
+                        </h3>
+                        <p class="mb-4">
+                            ข้อตกลงและเงื่อนไขฉบับนี้จะถูกควบคุมและตีความตามตัวบทกฎหมายของ <strong>ราชอาณาจักรไทย</strong> และข้อพิพาทใดๆ ที่เกิดขึ้นจะต้องอยู่ภายใต้เขตอำนาจการพิจารณาตัดสินของศาลในประเทศไทย
+                        </p>
+                        
+                        <!-- นามบัตรข้อมูลติดต่อท้ายสัญญา -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 mt-4 space-y-4">
+                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-address-card text-indigo-600"></i>
+                                <span>รายละเอียดและสถานที่ตั้งจดทะเบียนของบริษัท</span>
+                            </h4>
+                            <div class="space-y-3 text-xs sm:text-sm text-slate-600">
+                                <p class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-building text-slate-400 mt-1 w-4 text-center"></i>
+                                    <span>
+                                        <strong>บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด</strong><br>
+                                        <span class="text-slate-500 font-mono text-xs">MICROTRONIC (THAILAND) CO., LTD.</span>
+                                    </span>
+                                </p>
+                                <p class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-location-dot text-slate-400 mt-1 w-4 text-center"></i>
+                                    <span>
+                                        ที่ตั้งสำนักงานใหญ่: 136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400<br>
+                                        <span class="text-slate-500 font-mono text-xs">Address: 136/34 Padipat RD, Phayathai, Phayathai, Bangkok, 10400</span>
+                                    </span>
+                                </p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-slate-200 mt-2 text-xs sm:text-sm">
+                                    <p class="flex items-center gap-2">
+                                        <i class="fa-solid fa-envelope text-indigo-600"></i>
+                                        <span>อีเมลติดต่อ: grids@microtronic.biz</span>
+                                    </p>
+                                    <p class="flex items-center gap-2">
+                                        <i class="fa-solid fa-globe text-indigo-600"></i>
+                                        <span>เว็บไซต์สัญญานี้: www.microtronic.co.th</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ท้ายกระดาษเอกสาร (Document Footer) -->
+                <div class="border-t border-slate-100 pt-6 mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400">
+                    <p>© 2026 MICROTRONIC (THAILAND) CO., LTD. สงวนสิทธิ์ในส่วนของบริการและงานปรับแต่งภายนอก.</p>
+                </div>
+            </div>
+
+            <!-- กล่องป็อปอัปแจ้งเตือนคัดลอก (Toast Notification) -->
+            <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-lg flex items-center gap-2 transform translate-y-12 opacity-0 transition-all duration-300 pointer-events-none z-50">
+                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                <span class="text-sm font-medium">คัดลอกสัญญาฉบับเต็มลงคลิปบอร์ดแล้ว!</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ลายน้ำล่างสุดของเว็บแอป (Footer of Web App) - ซ่อนเมื่อสั่งพิมพ์ -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>เอกสารฉบับนี้กำหนดข้อมูลตามนิติบุคคลจดทะเบียนจริงของ <strong>บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด</strong> เพื่อประโยชน์สูงสุดในการดำเนินกิจการพัฒนาซอฟต์แวร์</p>
+        </div>
+    </footer>
+
+    <!-- ส่วนประมวลผล Javascript นำทางและคัดลอกข้อความ -->
+    <script>
+        // โครงสร้างเมนูสารบัญนำทางด่วนด้านข้าง
+        const sections = [
+            { id: 'sec-1', title: 'บททั่วไปและสัญญานิติบุคคล' },
+            { id: 'sec-2', title: 'โมเดลและบริการรับจ้าง' },
+            { id: 'sec-3', title: 'การคุ้มครอง Open Source' },
+            { id: 'sec-4', title: 'การจำกัดความรับผิดชอบ' },
+            { id: 'sec-5', title: 'ทรัพย์สินทางปัญญาแบรนด์' },
+            { id: 'sec-6', title: 'กฎหมายบังคับและติดต่อ' },
+        ];
+
+        // วนลูปเพื่อนำหัวข้อขึ้นสารบัญฝั่งซ้ายแบบไดนามิก
+        const tocList = document.getElementById('toc-list');
+        sections.forEach((sec, idx) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <a href="#${sec.id}" class="flex items-start gap-2 py-1 px-2 rounded hover:bg-slate-50 hover:text-indigo-600 transition-colors group">
+                    <span class="font-mono text-xs text-slate-400 group-hover:text-indigo-500 mt-0.5">${String(idx + 1).padStart(2, '0')}</span>
+                    <span class="truncate">${sec.title}</span>
+                </a>
+            `;
+            tocList.appendChild(li);
+        });
+
+        // ฟังก์ชันคัดลอกข้อความ Hardcode ทั้งหมดในรูปแบบ Plain Text จัดเรียงฟอร์แมตงดงาม
+        function copyFullText() {
+            const finalDocumentText = `ข้อตกลงและเงื่อนไขการใช้บริการพัฒนาและจัดแต่งระบบคอมพิวเตอร์
 มีผลบังคับใช้ ณ วันที่ 5 มิถุนายน 2026
-เว็บไซต์อย่างเป็นทางการ: www.microtronic.co.th
+เว็บไซต์ทางการ: www.microtronic.co.th
 
-01 บททั่วไปและคู่สัญญา
-ข้อตกลงและเงื่อนไขการใช้บริการฉบับนี้จัดทำขึ้นระหว่าง บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด และในภาษาอังกฤษคือ MICROTRONIC (THAILAND) CO., LTD. จดทะเบียนเลขที่ประจำตัวผู้เสียภาษีอากร 0105561182888 สำนักงานตั้งอยู่เลขที่ 136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400 (ซึ่งเรียกว่า "ผู้ให้บริการ") กับ บุคคลธรรมดา นิติบุคคล หรือองค์กรใด ๆ ที่ประสงค์จะรับมอบสิทธิ์ เข้าถึง หรือใช้ประโยชน์จากซอร์สโค้ดและบริการพัฒนาเว็บไซต์ที่อ้างอิงถึงเอกสารฉบับนี้ (ซึ่งเรียกว่า "ผู้ใช้บริการ")
+01 บททั่วไปและสัญญานิติบุคคล
+ข้อตกลงและเงื่อนไขการใช้บริการฉบับนี้ จัดทำขึ้นและบังคับใช้โดย บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด [MICROTRONIC (THAILAND) CO., LTD.] จดทะเบียนภายใต้กฎหมายแห่งราชอาณาจักรไทย มีสำนักงานตั้งอยู่เลขที่ 136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400 (ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้ให้บริการ") กับ บุคคลธรรมดา คณะบุคคล นิติบุคคล หรือองค์กรภาครัฐและเอกชน ที่ประสงค์จะรับสิทธิ์เข้าถึง ดาวน์โหลด ใช้งานซอร์สโค้ดต้นแบบ หรือจัดจ้างพัฒนาตกแต่งระบบเว็บไซต์ที่พึ่งพาเทคโนโลยีโครงสร้างของผู้ให้บริการ (ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้ใช้บริการ")
 
-02 โมเดลการให้บริการรับจ้างและพัฒนาต่อยอด (Service and Customization Model)
-ผู้ใช้บริการรับทราบว่า ค่าบริการทั้งหมดเป็นค่าบริการเชิงวิชาชีพและค่าแรงงาน มิใช่สิทธิ์ผูกขาดในซอร์สโค้ดที่เป็น Open Source:
-- ค่าทักษะแรงงานและการปรับแต่งเฉพาะบุคคล (Customization Fee) ของผู้ให้บริการ
-- ค่าบริการจัดเตรียมสถาปัตยกรรมและนำส่ง (Deployment & Setup Fee) ขึ้นระบบโฮสติ้งและโดเมน
-- ค่าสนับสนุนการปฏิบัติงานทางเทคนิค (Technical Support Fee)
-การชำระเงินจึงเป็นไปเพื่อแลกเวลา ทักษะแรงงาน และการประกอบสร้างระบบเท่านั้น
+02 โมเดลการประกอบธุรกิจและขอบเขตบริการรับจ้าง
+ผู้ใช้บริการตกลงและยอมรับในใจความสำคัญว่า ผู้ให้บริการประกอบธุรกิจในรูปแบบ "การให้บริการ ตกแต่ง ปรับปรุง ติดตั้ง และขายทักษะช่างคอมพิวเตอร์" (Service and Professional Labor Model) มิใช่โมเดลการขายสิทธิ์ความเป็นเจ้าของในตัวรหัสโค้ดแกนกลางแต่เพียงผู้เดียว โดยค่าบริการใด ๆ ที่เรียกเก็บจะแบ่งประเภทเป็น:
+1. ค่าวิชาชีพจัดทำและปรับแต่งเฉพาะบุคคล (Customization Fee): ค่าแรงงานในการวิเคราะห์ ออกแบบ ปรับเปลี่ยนส่วนติดต่อผู้ใช้ (UI/UX) ปรับแต่งชุดสี โลโก้ และเนื้อหาของเทมเพลตให้สอดคล้องตามความเหมาะสมของแบรนด์ผู้ใช้บริการ
+2. ค่าดำเนินการประกอบและเชื่อมโยงระบบ (Deployment & Implementation): ค่าใช้จ่ายเกี่ยวกับเวลาและอุปกรณ์ในขั้นตอนนำซอฟต์แวร์อัปโหลดขึ้นเครื่องแม่ข่าย (Cloud/Hosting Server) กำหนดค่าระบบโดเมนเนม (DNS) และเชื่อมประสาน API บุคคลที่สาม
+3. ค่าบริการบำรุงรักษาระบบคอมพิวเตอร์ (Technical Support & Maintenance): ค่าใช้จ่ายดูแลตรวจเช็กแก้ไขปัญหาของระบบที่ตกลงกันตามช่วงสัญญาเฉพาะหลังสิ้นสุดงานจ้างประกอบระบบ
+"ผู้ใช้บริการเข้าใจโดยชัดแจ้งว่า จำนวนเงินที่ผู้ใช้บริการชำระให้แก่ บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด ถือเป็นสินจ้างสำหรับ 'เวลา ทักษะความรู้ความสามารถ และบริการทางเทคนิค' ของทีมงานผู้ให้บริการเท่านั้น"
 
-03 กรรมสิทธิ์ในทรัพย์สินทางปัญญาและการอ้างอิง Open Source
-- ซอร์สโค้ดโครงสร้างและเฟรมเวิร์กอย่าง Next.js หรือ Vite อยู่ภายใต้ใบอนุญาตสากลแบบเปิด (MIT License) ผู้ใช้บริการไม่มีสิทธิ์อ้างกรรมสิทธิ์เดี่ยวในส่วนแกนหลัก Open Source
-- ผู้ใช้บริการจะได้รับสิทธิ์อันสมบูรณ์ในงานออกแบบ ภาพลักษณ์ แบรนด์ และโค้ดส่วนขยายเฉพาะทางธุรกิจ (Custom Proprietary Logic) ที่จัดทำขึ้นใหม่เพื่อผู้ใช้บริการโดยเฉพาะ
+03 การคุ้มครองตามสัญญาอนุญาตเปิดเผยซอร์สโค้ด (Open Source Compliance)
+เนื่องจากรหัสต้นแบบและเฟรมเวิร์กส่วนแกนกลางที่ใช้ในการจัดเตรียมการบริการให้แก่ผู้ใช้บริการ ประกอบด้วยระบบซอฟต์แวร์สากลอย่าง Next.js และ Vite ซึ่งเผยแพร่แก่สาธารณชนภายใต้สัญญาอนุญาตสากลแบบเปิดเผยโค้ด (Open Source License เช่น MIT License หรือเทียบเท่า) คู่สัญญาทั้งสองฝ่ายจึงตกลงเงื่อนไขด้านลิขสิทธิ์ร่วมกันดังนี้:
+1. ผู้ใช้บริการยอมรับว่าผู้ให้บริการไม่มีฐานะเป็นเจ้าของลิขสิทธิ์จำเพาะแต่เพียงผู้เดียวในตัวเฟรมเวิร์ก Next.js, Vite หรือ Package ต่าง ๆ ที่นำเข้ามาใช้งาน และตัวผู้ใช้บริการเองก็ตกลงจะไม่แอบอ้างสิทธิ์เหล่านั้นเช่นกัน
+2. ผู้ใช้บริการจะได้รับสิทธิ์อันชอบธรรมตามกฎหมาย ในการครอบครอง นำไปใช้ประโยชน์ ปรับปรุง ตกแต่งต่อยอด หรือแจกจ่ายต่อในส่วนของงานที่ได้ผ่านการ 'ปรับแต่งตามความต้องการลูกค้า' (Custom Proprietary Code) งานสร้างสรรค์รูปภาพ อัตลักษณ์แบรนด์ และตรรกะเฉพาะทางธุรกิจอย่างเต็มที่
+3. หากเป็นการดาวน์โหลดหรือคัดลอกไฟล์ต้นแบบที่เปิดให้ใช้งานฟรีบนเว็บไซต์ ผู้ใช้บริการตกลงยินยอมที่จะรักษาข้อความการยินยอมการใช้สิทธิ์ดั้งเดิม (Copyright Notice) ที่ปรากฏอยู่ในชุดคำสั่งไฟล์งานเหล่านั้นไว้เสมอ
 
-04 การจำกัดความรับผิดและขอบเขตความเสียหาย
-ระบบถูกส่งมอบ "ตามสภาพที่เป็นอยู่จริง" (As-Is) ผู้ให้บริการไม่ต้องรับผิดชอบต่อความสูญหายของข้อมูลหรือความเสียหายทางธุรกิจอันเกิดจากความบกพร่องของซอฟต์แวร์ต้นทาง (เช่น Node.js, Next.js หรือ Third-party Modules) ผู้ใช้บริการตกลงตรวจสอบและทดลองระบบให้มั่นใจก่อนประยุกต์ใช้งานเชิงพาณิชย์จริง
+04 การจำกัดความรับผิดชอบและการปฏิเสธการรับประกัน
+ผู้ให้บริการจัดเตรียมเทมเพลตซอร์สโค้ดฐานเปล่าในลักษณะ "ตามสภาพที่เป็นอยู่ขณะนั้น" (As-Is Basis):
+- ผู้ให้บริการขอปฏิเสธการรับประกันความเสียหาย สูญหายของข้อมูล รายรับขององค์กร หรือความปลอดภัยของระบบโครงสร้างภายนอก เช่น การอัปเดตระบบของโฮสติ้ง, การเปลี่ยนแปลงนโยบายสิทธิ์ของ Next.js/Vite, ความไม่เข้ากันของแพลตฟอร์ม และข้อบกพร่องที่เกิดจากปลั๊กอิน (Plugins/Dependencies) ของบุคคลภายนอก
+- ผู้ใช้บริการรับทราบและตกลงว่า การทดสอบระบบความปลอดภัยและระบบข้อมูลก่อนการเปิดใช้งานเชิงพาณิชย์เป็นความรับผิดชอบอันจำเพาะและเป็นหน้าที่ของผู้ใช้บริการเอง
+- ในกรณีที่มีการฟ้องร้องใดๆ เกี่ยวกับขอบข่ายการรับจ้างปรับแต่งระบบ ความรับผิดโดยรวมสูงสุดของผู้ให้บริการจะถูกจำกัดวงเงินไว้ไม่เกินจำนวนเงินแท้จริงที่ผู้ใช้บริการได้ชำระให้แก่ผู้ให้บริการสำหรับการว่าจ้างในคราวนั้น ๆ เท่านั้น
 
-05 สินทรัพย์ด้านแบรนด์ภาพลักษณ์และกราฟิกที่มิใช่รหัสโปรแกรม (Media Assets)
-เครื่องหมายการค้า โลโก้ และเนื้อหาอัตลักษณ์ของ บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด ถือเป็นสิทธิ์ขาดและลิขสิทธิ์ของผู้ให้บริการ ไม่อนุญาตให้นำไปขาย เลียนแบบ แอบอ้าง หรือแสวงหาผลประโยชน์ทางการค้าโดยเด็ดขาด
+05 ทรัพย์สินทางปัญญาสำหรับเนื้อหาและสื่อโฆษณา (Media Rights)
+เครื่องหมายทางการค้า โลโก้สัญลักษณ์ โทนสี อัตลักษณ์แบรนด์ ภาพกราฟิกตัวอย่าง และข้อความโฆษณาบนเว็บไซต์ทั้งหมดที่สร้างขึ้นโดย บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด ถือเป็นกรรมสิทธิ์ของทางผู้ให้บริการแต่เพียงผู้เดียวอย่างเด็ดขาด ห้ามมิให้ผู้ใช้บริการนำอัตลักษณ์เหล่านี้ไปสวมรอย ดัดแปลง ลอกเลียน คัดลอกไปทำซ้ำ เพื่อนำไปจำหน่ายเชิงพาณิชย์ต่อโดยไม่ได้รับการอนุญาตเป็นเอกสารลงลายมือชื่อจากกรรมการผู้มีอำนาจของบริษัทฯ
 
-06 กฎหมายที่ใช้บังคับและข้อมูลนิติบุคคลสำหรับการติดต่อ
-ข้อตกลงนี้อยู่ภายใต้ขอบเขตกฎหมายของ ประเทศไทย
-รายละเอียดที่อยู่จัดส่งเอกสารและช่องทางติดต่อทางกฎหมาย:
+06 กฎหมายบังคับใช้และช่องทางการติดต่อนิติบุคคล
+ข้อตกลงและเงื่อนไขฉบับนี้จะถูกควบคุมและตีความตามตัวบทกฎหมายของ ราชอาณาจักรไทย และข้อพิพาทใดๆ ที่เกิดขึ้นจะต้องอยู่ภายใต้เขตอำนาจการพิจารณาตัดสินของศาลในประเทศไทย
+
+รายละเอียดและสถานที่ตั้งจดทะเบียนของบริษัท:
 - บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด (MICROTRONIC (THAILAND) CO., LTD.)
-- ที่อยู่: 136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400 (136/34 Padipat RD, Phayathai, Phayathai, Bangkok, 10400)
-- เลขประจำตัวผู้เสียภาษีอากร: 0105561182888
-- อีเมลติดต่อ: contact@microtronic.co.th
-- เว็บไซต์: www.microtronic.co.th
+- ที่อยู่สำนักงานใหญ่: 136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400 (136/34 Padipat RD, Phayathai, Phayathai, Bangkok, 10400)
+- อีเมลติดต่อ: grids@microtronic.biz
+- เว็บไซต์สัญญานี้: www.microtronic.co.th`;
+
+            // สรรค์สร้าง Helper เพื่อทำการ Copy ลงคลิปบอร์ดแบบเสถียรสุดบน sandbox
+            const textareaHelper = document.createElement('textarea');
+            textareaHelper.value = finalDocumentText;
+            document.body.appendChild(textareaHelper);
+            textareaHelper.select();
+            document.execCommand('copy');
+            document.body.removeChild(textareaHelper);
+
+            // แสดง Popup ยืนยัน
+            showToastMessage();
+        }
+
+        // ฟังก์ชันหน่วงเวลาเปิดปิด Toast ข้อความเตือนคัดลอกสำเร็จ
+        function showToastMessage() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-12', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-12', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
