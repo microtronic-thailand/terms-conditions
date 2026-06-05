@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อตกลงและเงื่อนไขการใช้บริการ - MICROTRONIC (THAILAND) CO., LTD.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Sarabun & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Sarabun', 'Inter', sans-serif;
+        }
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- ส่วนหัวเว็บไซต์ (Header) -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-indigo-600 text-white p-2 rounded-lg">
+                    <i class="fa-solid fa-scale-balanced text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-md sm:text-lg font-bold text-slate-900 leading-tight">MICROTRONIC Legal Panel</h1>
+                    <p class="text-xs text-slate-500">ระบบจัดการและพรีวิวเอกสารเงื่อนไขการใช้บริการ</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="copyFullText()" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm">
+                    <i class="fa-regular fa-copy"></i>
+                    <span class="hidden sm:inline">คัดลอกข้อความทั้งหมด</span>
+                    <span class="sm:hidden">คัดลอก</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ส่วนเนื้อหาหลัก (Main Content) -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row gap-8">
+        
+        <!-- แผงควบคุมและเมนูด้านซ้าย (Left Sidebar) -->
+        <aside class="w-full lg:w-80 shrink-0 space-y-6">
+            <!-- ข้อมูลบริษัทนิติบุคคล (Company Profile Card) -->
+            <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-6 rounded-2xl shadow-md border border-slate-800">
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="fa-solid fa-building text-indigo-400"></i>
+                    <span class="text-xs uppercase tracking-wider font-semibold text-indigo-300">ข้อมูลนิติบุคคลผู้ให้บริการ</span>
+                </div>
+                <h3 class="font-bold text-lg leading-snug mb-1">บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด</h3>
+                <p class="text-xs text-slate-400 font-mono mb-4">MICROTRONIC (THAILAND) CO., LTD.</p>
+                
+                <div class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-3">
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-receipt text-slate-500 mt-0.5"></i>
+                        <span>เลขผู้เสียภาษี: <span class="font-mono text-slate-200">0105561182888</span></span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-slate-500 mt-0.5"></i>
+                        <span class="leading-relaxed">136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพฯ 10400</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ฟอร์มปรับแก้ไขข้อมูลแบบไดนามิก (Dynamic Customizer Form) -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <h3 class="font-bold text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-indigo-600"></i>
+                    <span>ปรับแต่งตัวแปรในสัญญา</span>
+                </h3>
+                
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">ชื่อบริษัท (ไทย)</label>
+                    <input type="text" id="input-brand-th" value="บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด" oninput="updateTerms()" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">ชื่อบริษัท (อังกฤษ)</label>
+                    <input type="text" id="input-brand-en" value="MICROTRONIC (THAILAND) CO., LTD." oninput="updateTerms()" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">เลขผู้เสียภาษี</label>
+                    <input type="text" id="input-tax-id" value="0105561182888" oninput="updateTerms()" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">ที่อยู่จดทะเบียน (ไทย)</label>
+                    <textarea id="input-address-th" rows="3" oninput="updateTerms()" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400</textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">ที่อยู่จดทะเบียน (อังกฤษ)</label>
+                    <textarea id="input-address-en" rows="3" oninput="updateTerms()" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">136/34 Padipat RD, Phayathai, Phayathai, Bangkok, 10400</textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">เว็บไซต์ผู้ให้บริการ</label>
+                    <input type="text" id="input-website" value="www.microtronic.co.th" oninput="updateTerms()" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">อีเมลติดต่อ</label>
+                    <input type="text" id="input-email" value="contact@microtronic.co.th" oninput="updateTerms()" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+            </div>
+
+            <!-- สารบัญหัวข้อด่วน (Quick Navigation) -->
+            <nav class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hidden lg:block sticky top-24">
+                <h3 class="font-bold text-slate-900 border-b border-slate-100 pb-3 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-list-ol text-indigo-600"></i>
+                    <span>สารบัญหัวข้อ</span>
+                </h3>
+                <ul class="space-y-1 text-sm text-slate-600" id="toc-list">
+                    <!-- โหลดอัตโนมัติผ่าน JS -->
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- เอกสารแสดงผลจริงด้านขวา (Right Side - Document Preview) -->
+        <section class="flex-1 space-y-6">
+            
+            <!-- การแจ้งเตือนความปลอดภัยทางข้อตกลง (Notice Banner) -->
+            <div class="bg-indigo-50 border border-indigo-100 p-5 rounded-2xl flex items-start gap-4">
+                <div class="bg-indigo-600 text-white p-2 rounded-xl shrink-0">
+                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-indigo-950 mb-1">การคุ้มครองสิทธิ์สำหรับโมเดลจัดเตรียมซอฟต์แวร์</h4>
+                    <p class="text-sm text-indigo-800 leading-relaxed">
+                        เอกสารนี้ระบุขอบเขตความรับผิดชอบอย่างโปร่งใสว่า ค่าใช้จ่ายในการรับจ้างคือ <strong>"ค่าบริการเวลาและทักษะแรงงานเชิงวิชาชีพ"</strong> เพื่อป้องกันไม่ให้เกิดความเข้าใจผิดเกี่ยวกับลิขสิทธิ์พื้นฐานของ Open Source (เช่น Next.js / Vite) ที่คุณใช้พัฒนาระบบ
+                    </p>
+                </div>
+            </div>
+
+            <!-- ตัวเอกสารจำลอง (Document Container) -->
+            <div class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-10 relative overflow-hidden">
+                <!-- วงกลมตกแต่งสไตล์สัญญากฎหมาย -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full filter blur-3xl opacity-40 -mr-10 -mt-10"></div>
+                
+                <!-- หัวกระดาษเอกสาร (Document Header) -->
+                <div class="border-b border-slate-100 pb-8 mb-8 text-center sm:text-left">
+                    <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-3">
+                        เอกสารทางการของบริษัท
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-2">
+                        ข้อตกลงและเงื่อนไขการใช้บริการพัฒนาและจัดแต่งระบบ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500 flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                        <span>มีผลบังคับใช้ ณ วันที่ 5 มิถุนายน 2026</span>
+                        <span class="hidden sm:inline">•</span>
+                        <span>เว็บไซต์อย่างเป็นทางการ: <span id="text-website-header" class="font-medium text-slate-800">www.microtronic.co.th</span></span>
+                    </p>
+                </div>
+
+                <!-- เนื้อหาในสัญญา (Document Body Content) -->
+                <div id="terms-content" class="space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">
+                    
+                    <!-- ส่วนที่ 1 -->
+                    <div id="sec-1" class="section-block scroll-mt-20">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3">
+                            <span class="bg-slate-100 text-indigo-600 px-2 py-0.5 rounded text-xs font-mono">01</span>
+                            <span>บททั่วไปและคู่สัญญา</span>
+                        </h3>
+                        <p class="mb-3">
+                            ข้อตกลงและเงื่อนไขการใช้บริการฉบับนี้จัดทำขึ้นระหว่าง <span class="font-semibold text-slate-900 placeholder-brand-th">บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด</span> และในภาษาอังกฤษคือ <span class="font-semibold text-slate-900 placeholder-brand-en">MICROTRONIC (THAILAND) CO., LTD.</span> จดทะเบียนเลขที่ประจำตัวผู้เสียภาษีอากร <span class="font-semibold text-slate-950 placeholder-tax-id">0105561182888</span> สำนักงานตั้งอยู่เลขที่ <span class="placeholder-address-th text-slate-900 font-medium">136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400</span> (ซึ่งต่อไปนี้เรียกว่า <strong>"ผู้ให้บริการ"</strong>) ฝ่ายหนึ่ง
+                        </p>
+                        <p>
+                            กับ บุคคลธรรมดา นิติบุคคล หรือองค์กรใด ๆ ที่ประสงค์จะรับมอบสิทธิ์ เข้าถึง หรือใช้ประโยชน์จากซอร์สโค้ดและบริการพัฒนาเว็บไซต์ที่อ้างอิงถึงเอกสารฉบับนี้ (ซึ่งต่อไปในสัญญานี้จะเรียกว่า <strong>"ผู้ใช้บริการ"</strong>) อีกฝ่ายหนึ่ง
+                        </p>
+                    </div>
+
+                    <!-- ส่วนที่ 2 -->
+                    <div id="sec-2" class="section-block scroll-mt-20">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3">
+                            <span class="bg-slate-100 text-indigo-600 px-2 py-0.5 rounded text-xs font-mono">02</span>
+                            <span>โมเดลการให้บริการรับจ้างและพัฒนาต่อยอด (Service and Customization Model)</span>
+                        </h3>
+                        <p class="mb-3">
+                            ผู้ใช้บริการรับทราบและทำความเข้าใจเป็นสำคัญว่า รูปแบบการดำเนินธุรกิจของผู้ให้บริการ **มิใช่** การจำหน่ายตัวสิทธิ์ขาดซอร์สโค้ดที่เป็นกรรมสิทธิ์เดี่ยวแบบผูกขาดอย่างสมบูรณ์ (Non-exclusive distribution model) เนื่องจากโครงสร้างหลักพึ่งพาซอฟต์แวร์สากลแบบเปิดเผยโค้ด (Open Source Core) ดังนั้นค่าชำระบริการทั้งหมดที่เรียกเก็บจากผู้ใช้บริการจะถูกระบุขอบเขตเป็นค่าบริการดังนี้:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 mb-3 text-slate-600">
+                            <li><strong>ค่าทักษะแรงงานและการปรับแต่งเฉพาะบุคคล (Customization Fee):</strong> ค่าแรงงาน เวลาการพัฒนา และการใช้ความรู้เฉพาะทางในการจัดทำ Layout, ปรับเปลี่ยนสีสัน, รูปแบบภาพประกอบ, ตัวอักษร ตลอดจนข้อความให้ตรงกับแบรนด์ของผู้ใช้บริการ</li>
+                            <li><strong>ค่าบริการจัดเตรียมสถาปัตยกรรมและนำส่ง (Deployment & Setup Fee):</strong> ค่าดำเนินการทางเทคนิคในการทดสอบระบบและนำซอฟต์แวร์ขึ้นโฮสติ้ง ติดตั้งเซิร์ฟเวอร์โดเมน การกำหนดค่าความปลอดภัย และระบบฐานข้อมูล</li>
+                            <li><strong>ค่าสนับสนุนการปฏิบัติงานทางเทคนิค (Technical Support Fee):</strong> ค่าใช้จ่ายสำหรับการแก้ไขปัญหาระบบและตรวจสอบประสิทธิภาพหลังส่งมอบตามระยะเวลาที่กำหนด</li>
+                        </ul>
+                    </div>
+
+                    <!-- ส่วนที่ 3 -->
+                    <div id="sec-3" class="section-block scroll-mt-20">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3">
+                            <span class="bg-slate-100 text-indigo-600 px-2 py-0.5 rounded text-xs font-mono">03</span>
+                            <span>กรรมสิทธิ์ในทรัพย์สินทางปัญญาและการอ้างอิง Open Source</span>
+                        </h3>
+                        <p class="mb-3">
+                            ผู้ใช้บริการตกลงยอมรับและเคารพข้อจำกัดและข้อกำหนดทางสิทธิ์ตามมาตรฐานของซอฟต์แวร์ต้นทาง:
+                        </p>
+                        <ol class="list-decimal pl-6 space-y-2 mb-3 text-slate-600">
+                            <li>เครื่องมือและรหัสโปรแกรมที่จัดตั้งบนโครงสร้างของเฟรมเวิร์กอย่าง <strong>Next.js</strong> หรือ <strong>Vite</strong> ยังคงตกอยู่ภายใต้กฎเกณฑ์และลิขสิทธิ์ของใบอนุญาตประเภท <strong>MIT License</strong> หรือข้อตกลงโอเพนซอร์สของเจ้าของสิทธิ์เดิม</li>
+                            <li>ผู้ใช้บริการจะได้รับสิทธิ์อันสมบูรณ์ในการครอบครอง ใช้งาน และแสวงหาผลประโยชน์ทางการค้าอย่างไม่จำกัดจากระบบในส่วนที่ได้รับการปรับแต่ง โค้ดส่วนต่อขยายเฉพาะ (Custom Proprietary Logic) และรูปแบบเนื้อหาที่สร้างสรรค์ขึ้นใหม่เพื่อองค์กรของผู้ใช้บริการ</li>
+                        </ol>
+                    </div>
+
+                    <!-- ส่วนที่ 4 -->
+                    <div id="sec-4" class="section-block scroll-mt-20">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3">
+                            <span class="bg-slate-100 text-indigo-600 px-2 py-0.5 rounded text-xs font-mono">04</span>
+                            <span>การจำกัดความรับผิดและขอบเขตความเสียหาย</span>
+                        </h3>
+                        <p class="mb-3">
+                            ผู้ให้บริการจัดเตรียมแพลตฟอร์มและองค์ประกอบต่าง ๆ ให้แก่ผู้ใช้บริการ "ตามสภาพที่เป็นอยู่จริง" (As-Is Basis):
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 mb-3 text-slate-600">
+                            <li>ผู้ให้บริการจะไม่รับผิดชอบต่อความสูญหายของข้อมูล รายได้ที่ชะงักงัน หรือความผิดพลาดทางโครงสร้างพื้นฐานภายนอก เช่น ข้อผิดพลาดของระบบโฮสติ้ง, Cloud Services หรือการทำงานที่ผิดแปลกไปจากเดิมเนื่องจากการอัปเกรดเวอร์ชันของ Next.js และแพ็กเกจภายนอก (Third-party Packages)</li>
+                            <li>ผู้ใช้บริการมีหน้าที่รับผิดชอบตรวจสอบและตรวจสอบความถูกต้องของระบบก่อนการเริ่มนำไปประยุกต์ใช้เพื่อการพาณิชย์จริง</li>
+                        </ul>
+                    </div>
+
+                    <!-- ส่วนที่ 5 -->
+                    <div id="sec-5" class="section-block scroll-mt-20">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3">
+                            <span class="bg-slate-100 text-indigo-600 px-2 py-0.5 rounded text-xs font-mono">05</span>
+                            <span>สินทรัพย์ด้านแบรนด์ภาพลักษณ์และกราฟิกที่มิใช่รหัสโปรแกรม (Media Assets)</span>
+                        </h3>
+                        <p>
+                            เครื่องหมายการค้า โลโก้แบรนด์ และอัตลักษณ์เฉพาะของ <span class="placeholder-brand-th text-slate-900 font-semibold">บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด</span> รวมถึงข้อความทางการตลาดบนเทมเพลตตัวอย่าง ถือเป็นกรรมสิทธิ์สิทธิ์ขาดและลิขสิทธิ์ของผู้ให้บริการแต่เพียงผู้เดียว ห้ามมิให้ผู้ใช้บริการนำภาพกราฟิก สัญลักษณ์แบรนด์ หรือสโลแกนเหล่านี้ไปขาย คัดลอก เลียนแบบ หรือแอบอ้างโดยเด็ดขาด
+                        </p>
+                    </div>
+
+                    <!-- ส่วนที่ 6 -->
+                    <div id="sec-6" class="section-block scroll-mt-20">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3">
+                            <span class="bg-slate-100 text-indigo-600 px-2 py-0.5 rounded text-xs font-mono">06</span>
+                            <span>กฎหมายที่ใช้บังคับและข้อมูลนิติบุคคลสำหรับการติดต่อ</span>
+                        </h3>
+                        <p class="mb-4">
+                            ข้อกำหนดสัญญาทั้งหมดนี้ถูกควบคุม ตีความ และบังคับใช้ตามกฎหมายของ <strong>ประเทศไทย</strong> และอยู่ภายใต้เขตอำนาจพิจารณาคดีของศาลในประเทศไทย
+                        </p>
+                        
+                        <!-- นามบัตรข้อมูลติดต่อท้ายสัญญา -->
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 mt-4 space-y-3">
+                            <h4 class="font-bold text-slate-900 text-sm">รายละเอียดติดต่อสำนักงานนิติบุคคล:</h4>
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-600">
+                                <p class="flex items-start gap-2">
+                                    <i class="fa-solid fa-building text-indigo-600 mt-1"></i>
+                                    <span>
+                                        <strong><span class="placeholder-brand-th">บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด</span></strong><br>
+                                        <span class="text-slate-500 text-xs font-mono placeholder-brand-en">MICROTRONIC (THAILAND) CO., LTD.</span>
+                                    </span>
+                                </p>
+                                <p class="flex items-start gap-2">
+                                    <i class="fa-solid fa-location-dot text-indigo-600 mt-1"></i>
+                                    <span>
+                                        ที่อยู่จดทะเบียน: <span class="placeholder-address-th">136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400</span><br>
+                                        <span class="text-slate-500 text-xs font-mono placeholder-address-en">136/34 Padipat RD, Phayathai, Phayathai, Bangkok, 10400</span>
+                                    </span>
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    <i class="fa-solid fa-receipt text-indigo-600"></i>
+                                    <span>เลขประจำตัวผู้เสียภาษีอากร: <span class="font-mono font-medium placeholder-tax-id">0105561182888</span></span>
+                                </p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-slate-200 mt-2">
+                                    <p class="flex items-center gap-2">
+                                        <i class="fa-solid fa-envelope text-indigo-600"></i>
+                                        <span>อีเมล: <span class="placeholder-email">contact@microtronic.co.th</span></span>
+                                    </p>
+                                    <p class="flex items-center gap-2">
+                                        <i class="fa-solid fa-globe text-indigo-600"></i>
+                                        <span>เว็บไซต์: <span class="placeholder-website">www.microtronic.co.th</span></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ท้ายกระดาษเอกสาร (Document Footer) -->
+                <div class="border-t border-slate-100 pt-6 mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400">
+                    <p>© 2026 <span class="placeholder-brand-en">MICROTRONIC (THAILAND) CO., LTD.</span> สงวนสิทธิ์ในส่วนของบริการและงานปรับแต่งภายนอก.</p>
+                    <p class="mt-2 sm:mt-0 flex items-center gap-1 font-mono text-[10px]">
+                        <span>TAX ID: <span class="placeholder-tax-id">0105561182888</span></span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- ข้อความป็อปอัปแจ้งเตือน (Toast Notification) -->
+            <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-lg flex items-center gap-2 transform translate-y-12 opacity-0 transition-all duration-300 pointer-events-none z-50">
+                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                <span class="text-sm font-medium">คัดลอกสัญญาฉบับเต็มลงคลิปบอร์ดแล้ว!</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ลายน้ำส่วนล่างสุดของเว็บแอป (Footer of Web App) -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>เอกสารข้อตกลงฉบับนี้จัดทำขึ้นโดยได้รับการปรับแต่งและใส่ข้อมูลทางการของ <span class="placeholder-brand-th">บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด</span> อย่างเป็นทางการ</p>
+            <p class="mt-1">สงวนสิทธิ์การจำลองแผงพรีวิวตามมาตรฐานโครงสร้าง Web Development stack ของไมโครทรอนิก</p>
+        </div>
+    </footer>
+
+    <!-- ส่วนตรรกะ JavaScript ปรับแก้ไขและส่งออกเนื้อหา -->
+    <script>
+        // โครงสร้างเมนูสารบัญทางด่วนด้านข้าง
+        const sections = [
+            { id: 'sec-1', title: 'บททั่วไปและคู่สัญญา' },
+            { id: 'sec-2', title: 'โมเดลและบริการรับจ้าง' },
+            { id: 'sec-3', title: 'กรรมสิทธิ์และ Open Source' },
+            { id: 'sec-4', title: 'การจำกัดความรับผิด' },
+            { id: 'sec-5', title: 'แบรนด์และกราฟิกตัวอย่าง' },
+            { id: 'sec-6', title: 'กฎหมายบังคับและข้อมูลติดต่อ' },
+        ];
+
+        // สร้างรายการสารบัญแบบไดนามิก
+        const tocList = document.getElementById('toc-list');
+        sections.forEach((sec, idx) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <a href="#${sec.id}" class="flex items-start gap-2 py-1 px-2 rounded hover:bg-slate-50 hover:text-indigo-600 transition-colors group">
+                    <span class="font-mono text-xs text-slate-400 group-hover:text-indigo-500 mt-0.5">${String(idx + 1).padStart(2, '0')}</span>
+                    <span class="truncate">${sec.title}</span>
+                </a>
+            `;
+            tocList.appendChild(li);
+        });
+
+        // ฟังก์ชันอัปเดตข้อมูลในสัญญาเมื่อผู้ใช้ทำการแก้ไขในฟอร์มด้านข้าง
+        function updateTerms() {
+            const brandTh = document.getElementById('input-brand-th').value || 'บริษัท ไมโครทรอนิก (ไทยแลนด์) จำกัด';
+            const brandEn = document.getElementById('input-brand-en').value || 'MICROTRONIC (THAILAND) CO., LTD.';
+            const taxId = document.getElementById('input-tax-id').value || '0105561182888';
+            const addressTh = document.getElementById('input-address-th').value || '136/34 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400';
+            const addressEn = document.getElementById('input-address-en').value || '136/34 Padipat RD, Phayathai, Phayathai, Bangkok, 10400';
+            const website = document.getElementById('input-website').value || 'www.microtronic.co.th';
+            const email = document.getElementById('input-email').value || 'contact@microtronic.co.th';
+
+            // แสดงผลเว็บไซต์ที่ส่วนหัวของเอกสาร
+            document.getElementById('text-website-header').innerText = website;
+
+            // แทนที่คำในตัวแปรเอกสารทั้งหมดด้วย Class Selector
+            document.querySelectorAll('.placeholder-brand-th').forEach(el => el.innerText = brandTh);
+            document.querySelectorAll('.placeholder-brand-en').forEach(el => el.innerText = brandEn);
+            document.querySelectorAll('.placeholder-tax-id').forEach(el => el.innerText = taxId);
+            document.querySelectorAll('.placeholder-address-th').forEach(el => el.innerText = addressTh);
+            document.querySelectorAll('.placeholder-address-en').forEach(el => el.innerText = addressEn);
+            document.querySelectorAll('.placeholder-website').forEach(el => el.innerText = website);
+            document.querySelectorAll('.placeholder-email').forEach(el => el.innerText = email);
+        }
+
+        // เริ่มต้นอัปเดตข้อมูลทันทีที่เว็บโหลดเสร็จสิ้น
+        window.addEventListener('DOMContentLoaded', () => {
+            updateTerms();
+        });
+
+        // คัดลอกเนื้อหาสัญญาทั้งหมดเป็นรูปแบบข้อความตัวอักษรธรรมดา (Plain Text)
+        function copyFullText() {
+            const brandTh = document.getElementById('input-brand-th').value;
+            const brandEn = document.getElementById('input-brand-en').value;
+            const taxId = document.getElementById('input-tax-id').value;
+            const addressTh = document.getElementById('input-address-th').value;
+            const addressEn = document.getElementById('input-address-en').value;
+            const website = document.getElementById('input-website').value;
+            const email = document.getElementById('input-email').value;
+
+            const finalDocumentText = `ข้อตกลงและเงื่อนไขการใช้บริการพัฒนาและจัดแต่งระบบ
+มีผลบังคับใช้ ณ วันที่ 5 มิถุนายน 2026
+เว็บไซต์อย่างเป็นทางการ: ${website}
+
+01 บททั่วไปและคู่สัญญา
+ข้อตกลงและเงื่อนไขการใช้บริการฉบับนี้จัดทำขึ้นระหว่าง ${brandTh} และในภาษาอังกฤษคือ ${brandEn} จดทะเบียนเลขที่ประจำตัวผู้เสียภาษีอากร ${taxId} สำนักงานตั้งอยู่เลขที่ ${addressTh} (ซึ่งเรียกว่า "ผู้ให้บริการ") กับ บุคคลธรรมดา นิติบุคคล หรือองค์กรใด ๆ ที่ประสงค์จะรับมอบสิทธิ์ เข้าถึง หรือใช้ประโยชน์จากซอร์สโค้ดและบริการพัฒนาเว็บไซต์ที่อ้างอิงถึงเอกสารฉบับนี้ (ซึ่งเรียกว่า "ผู้ใช้บริการ")
+
+02 โมเดลการให้บริการรับจ้างและพัฒนาต่อยอด (Service and Customization Model)
+ผู้ใช้บริการรับทราบว่า ค่าบริการทั้งหมดเป็นค่าบริการเชิงวิชาชีพและค่าแรงงาน มิใช่สิทธิ์ผูกขาดในซอร์สโค้ดที่เป็น Open Source:
+- ค่าทักษะแรงงานและการปรับแต่งเฉพาะบุคคล (Customization Fee) ของผู้ให้บริการ
+- ค่าบริการจัดเตรียมสถาปัตยกรรมและนำส่ง (Deployment & Setup Fee) ขึ้นระบบโฮสติ้งและโดเมน
+- ค่าสนับสนุนการปฏิบัติงานทางเทคนิค (Technical Support Fee)
+การชำระเงินจึงเป็นไปเพื่อแลกเวลา ทักษะแรงงาน และการประกอบสร้างระบบเท่านั้น
+
+03 กรรมสิทธิ์ในทรัพย์สินทางปัญญาและการอ้างอิง Open Source
+- ซอร์สโค้ดโครงสร้างและเฟรมเวิร์กอย่าง Next.js หรือ Vite อยู่ภายใต้ใบอนุญาตสากลแบบเปิด (MIT License) ผู้ใช้บริการไม่มีสิทธิ์อ้างกรรมสิทธิ์เดี่ยวในส่วนแกนหลัก Open Source
+- ผู้ใช้บริการจะได้รับสิทธิ์อันสมบูรณ์ในงานออกแบบ ภาพลักษณ์ แบรนด์ และโค้ดส่วนขยายเฉพาะทางธุรกิจ (Custom Proprietary Logic) ที่จัดทำขึ้นใหม่เพื่อผู้ใช้บริการโดยเฉพาะ
+
+04 การจำกัดความรับผิดและขอบเขตความเสียหาย
+ระบบถูกส่งมอบ "ตามสภาพที่เป็นอยู่จริง" (As-Is) ผู้ให้บริการไม่ต้องรับผิดชอบต่อความสูญหายของข้อมูลหรือความเสียหายทางธุรกิจอันเกิดจากความบกพร่องของซอฟต์แวร์ต้นทาง (เช่น Node.js, Next.js หรือ Third-party Modules) ผู้ใช้บริการตกลงตรวจสอบและทดลองระบบให้มั่นใจก่อนประยุกต์ใช้งานเชิงพาณิชย์จริง
+
+05 สินทรัพย์ด้านแบรนด์ภาพลักษณ์และกราฟิกที่มิใช่รหัสโปรแกรม (Media Assets)
+เครื่องหมายการค้า โลโก้ และเนื้อหาอัตลักษณ์ของ ${brandTh} ถือเป็นสิทธิ์ขาดและลิขสิทธิ์ของผู้ให้บริการ ไม่อนุญาตให้นำไปขาย เลียนแบบ แอบอ้าง หรือแสวงหาผลประโยชน์ทางการค้าโดยเด็ดขาด
+
+06 กฎหมายที่ใช้บังคับและข้อมูลนิติบุคคลสำหรับการติดต่อ
+ข้อตกลงนี้อยู่ภายใต้ขอบเขตกฎหมายของ ประเทศไทย
+รายละเอียดที่อยู่จัดส่งเอกสารและช่องทางติดต่อทางกฎหมาย:
+- ${brandTh} (${brandEn})
+- ที่อยู่: ${addressTh} (${addressEn})
+- เลขประจำตัวผู้เสียภาษีอากร: ${taxId}
+- อีเมลติดต่อ: ${email}
+- เว็บไซต์: ${website}`;
+
+            // ทำการสำเนาข้อความลง Clipboard ผ่านวิธีแบบดั้งเดิมที่เสถียรที่สุดในสภาพแวดล้อมจำลอง (iFrame)
+            const helperTextarea = document.createElement('textarea');
+            helperTextarea.value = finalDocumentText;
+            document.body.appendChild(helperTextarea);
+            helperTextarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(helperTextarea);
+
+            // แสดงหน้าต่างแสดงผลเล็ก ๆ (Toast) ยืนยันการคัดลอกสำเร็จ
+            showCopyToast();
+        }
+
+        // แสดงผลแผ่นแจ้งเตือนว่าคัดลอกเรียบร้อยแล้ว
+        function showCopyToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-12', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-12', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
